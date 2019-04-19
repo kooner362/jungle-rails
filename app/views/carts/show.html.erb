@@ -1,10 +1,12 @@
 <section class="cart-show">
-
+  
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-
-  <div class="panel panel-default items">
+  <% if empty_cart %>
+    <%= render 'empty_cart' %>
+  <% else %>
+    <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -48,5 +50,7 @@
       <% end %>
     </div>
   </div>
+<% end %> 
+ 
 
 </section>
