@@ -10,15 +10,15 @@ class ApplicationController < ActionController::Base
   end
   helper_method :cart
 
-  def empty_cart
-    @empty_cart ||= cookies[:cart].present? ? true : false
-  end
-  helper_method :empty_cart
-
   def enhanced_cart
     @enhanced_cart ||= Product.where(id: cart.keys).map {|product| { product:product, quantity: cart[product.id.to_s] } }
   end
   helper_method :enhanced_cart
+
+  def empty_cart
+    @empty_cart ||= enhanced_cart.length == 0 ? true : false
+  end
+  helper_method :empty_cart
 
   def cart_subtotal_cents
     enhanced_cart.map {|entry| entry[:product].price_cents * entry[:quantity]}.sum

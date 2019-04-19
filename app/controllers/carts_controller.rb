@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
 
   def show
-    if !empty_cart
+    if empty_cart
       render :partial => "empty_cart"
     end
   end
