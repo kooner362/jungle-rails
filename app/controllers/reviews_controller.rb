@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+    before_filter :current_user
+
     def create
         @product = Product.find(params[:product_id])
         new_review ={
@@ -8,6 +10,14 @@ class ReviewsController < ApplicationController
             product_id: review_params[:product_id]
         }
         @review = @product.reviews.create(new_review)
+        redirect_to product_path(@product)
+    end
+
+    def destroy
+        @product = Product.find(params[:product_id])
+        puts @product.inspect
+        @review = @product.reviews.find(params[:id])
+        @review.destroy
         redirect_to product_path(@product)
     end
      

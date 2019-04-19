@@ -23,6 +23,7 @@
       </div>
     </div>
     <h1>Reviews</h1>
+    <% if current_user %>
     <div class="row">
       <%= form_for([@product, @product.reviews.build]) do |f| %>
         <p>
@@ -39,12 +40,16 @@
         </p>
       <% end %>
     </div>
+    <% end %>
     <div class="row">
       <% @reviews.each do |review| %>
         <div class="review">
           <p>User: <%= find_user_email(review.user_id) %></p>
           <p><%= review.description %></p>
           <p>Rating: <%= review.rating %></p>
+          <%= link_to 'Destroy Review', [review.product, review],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
         </div>
       <% end %>
 
