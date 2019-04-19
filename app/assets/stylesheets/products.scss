@@ -87,9 +87,30 @@ main section.products-show {
   .review {
     border-style: solid;
     margin-bottom: 1em;
+    
+    .header {
+      border-bottom: 1px solid;
+    }
+    .rating {
+      
+      margin-left: 1em;
+    }
+    .checked {
+      color: orange;
+    }
+    h4 {
+      margin-left: 1em;
+    }
     p {
       margin-top: 1em;
+      margin-left: 2em;
+    }
+    a {
+      color: white;
+    }
+    button {
       margin-left: 1em;
+      margin-bottom: 1em;
     }
   }
 }

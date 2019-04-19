@@ -44,14 +44,24 @@
     <div class="row">
       <% @reviews.each do |review| %>
         <div class="review">
-          <p>User: <%= find_user_email(review.user_id) %></p>
+          <div class="header">
+            <div class="rating">
+              <% review.rating.times do %>
+                <span class="fa fa-star checked"></span>
+              <% end %>
+              <% (5 - review.rating).times do %>
+                <span class="fa fa-star"></span>
+              <% end %>
+            </div>
+          </div>
+          <h4><%= find_user_email(review.user_id) %></h4>
           <p><%= review.description %></p>
-          <p>Rating: <%= review.rating %></p>
+          
           <% if current_user.id == review.user_id%>
-          <p><%= link_to 'Delete Review', [review.product, review],
+          <button class="btn btn-danger btn-xs"><%= link_to 'Delete Review', [review.product, review],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
-          </p>
+          </button>
           <% end %>
         </div>
       <% end %>
