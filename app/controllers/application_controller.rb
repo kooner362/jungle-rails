@@ -43,5 +43,9 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
-
+  def find_user_email(id)
+    user = User.where(id: id)
+    user[0].email
+  end
+  helper_method :find_user_email
 end

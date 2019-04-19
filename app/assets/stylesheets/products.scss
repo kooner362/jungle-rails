@@ -1,6 +1,6 @@
 main section.products-index,
 main section.categories-show {
-
+  
   .products {
     display:         flex;
     flex-direction:  row;
@@ -81,6 +81,15 @@ main section.products-show {
   .product-detail {
     img.main-img {
       max-width: 100%;
+    }
+  }
+
+  .review {
+    border-style: solid;
+    margin-bottom: 1em;
+    p {
+      margin-top: 1em;
+      margin-left: 1em;
     }
   }
 }
