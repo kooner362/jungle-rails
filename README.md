@@ -1,7 +1,11 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2.
 
+# Final Product
+!["Screenshot of Sold out banner."](https://raw.githubusercontent.com/kooner362/jungle-rails/master/docs/1.png)
+!["Screenshot of logged in user"](https://raw.githubusercontent.com/kooner362/jungle-rails/master/docs/2.png)
+!["Screenshot of empty cart"](https://raw.githubusercontent.com/kooner362/jungle-rails/master/docs/3.png)
 
 ## Setup
 
