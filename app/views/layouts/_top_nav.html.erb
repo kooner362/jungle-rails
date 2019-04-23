@@ -49,6 +49,11 @@
         <% else %>
         <li><%= link_to 'Login', '/login' %></li>
         <li><%= link_to 'Signup', '/signup' %></li>
+        <li>
+          <%= link_to cart_path do %>
+            <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
+          <% end %>
+        </li>
         <% end %>
         
       </ul>
